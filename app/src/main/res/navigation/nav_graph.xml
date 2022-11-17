@@ -9,5 +9,14 @@
         android:id="@+id/mainFragment"
         android:name="ru.skillbox.test_3205team.MainFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_reposFragment"
+            app:destination="@id/reposFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reposFragment"
+        android:name="ru.skillbox.test_3205team.ReposFragment"
+        android:label="ReposFragment"
+        tools:layout="@layout/fragment_repos" />
 </navigation>
