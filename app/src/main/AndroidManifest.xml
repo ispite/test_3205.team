@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="ru.skillbox.test_3205team">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".app.Test3205App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

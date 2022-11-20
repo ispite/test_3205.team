@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id "org.jmailen.kotlinter" version "3.12.0"
+    id 'kotlin-kapt'
 }
 
 android {
@@ -53,4 +54,30 @@ dependencies {
 
     //RecyclerView
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    //Retrofit
+
+    def retrofitVersion = '2.9.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+
+    implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
+
+    //Moshi
+    def moshiVersion = '1.13.0'
+
+    implementation "com.squareup.moshi:moshi:$moshiVersion"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
+
+    //Coroutines
+    def coroutinesVersion = '1.6.4'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+    // Logging
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
 }
