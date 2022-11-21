@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.DiffUtil
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import ru.skillbox.test_3205team.data.Repository
 
-class RepoAdapter(onDownloadRepo: (id: Long) -> Unit) :
+class RepoAdapter(onDownloadRepo: (repository: Repository) -> Unit) :
     AsyncListDifferDelegationAdapter<Repository>(RepoDiffUtilCallback()) {
 
     init {
@@ -19,6 +19,5 @@ class RepoAdapter(onDownloadRepo: (id: Long) -> Unit) :
         override fun areContentsTheSame(oldItem: Repository, newItem: Repository): Boolean {
             return oldItem == newItem
         }
-
     }
 }

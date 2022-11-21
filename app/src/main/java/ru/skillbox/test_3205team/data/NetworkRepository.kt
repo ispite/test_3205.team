@@ -8,7 +8,6 @@ class NetworkRepository {
 
     suspend fun userRepos(owner: String) = Networking.gitHubApi.userRepos(owner)
 
-    suspend fun downloadMasterRepo(owner: String, repo: String) =
-        Networking.gitHubApi.downloadMasterRepo(owner, repo)
-
+/*    suspend fun downloadMasterRepo(owner: String, repo: String) =
+        Networking.gitHubApi.downloadMasterRepo(owner, repo)*/
 }

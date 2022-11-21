@@ -8,7 +8,7 @@ import ru.skillbox.test_3205team.databinding.ItemRepositoryBinding
 import ru.skillbox.test_3205team.utils.inflate
 
 class RepoDelegate(
-    private val onDownloadRepo: (id: Long) -> Unit
+    private val onDownloadRepo: (repository: Repository) -> Unit
 ) :
     AbsListItemAdapterDelegate<Repository, Repository, RepoDelegate.RepoViewHolder>() {
 
@@ -34,18 +34,18 @@ class RepoDelegate(
 
     class RepoViewHolder(
         private val binding: ItemRepositoryBinding,
-        onDownloadRepo: (id: Long) -> Unit
+        onDownloadRepo: (repository: Repository) -> Unit
     ) :
         RecyclerView.ViewHolder(binding.root) {
 
-        private var currentRepoId: Long? = null
+        private var currentRepoId: Repository? = null
 
         init {
             binding.repoDownloadButton.setOnClickListener { currentRepoId?.let(onDownloadRepo) }
         }
 
         fun bind(item: Repository) {
-            currentRepoId = item.id
+            currentRepoId = item
             with(binding) {
                 repoNameTextView.text = item.name
                 repoDescriptionTextView.text = item.description

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">test_3205.team</string>
+    <string name="create_zip_error_toast_message">Ошибка при создании zip-файла</string>
+
 </resources>
