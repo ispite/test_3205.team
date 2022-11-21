@@ -1,17 +1,20 @@
-package ru.skillbox.test_3205team
+package ru.skillbox.test_3205team.ui.main
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
+import ru.skillbox.test_3205team.R
 import ru.skillbox.test_3205team.databinding.FragmentMainBinding
 import ru.skillbox.test_3205team.utils.autoCleared
 import ru.skillbox.test_3205team.utils.textChangedFlow
+import timber.log.Timber
 
 class MainFragment : Fragment(R.layout.fragment_main) {
 
@@ -36,7 +39,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun initList() {
-        userAdapter = UserAdapter()
+        userAdapter = UserAdapter {
+            Timber.d("name= $it")
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToReposFragment(it))
+        }
         with(binding.usersRecyclerView) {
             adapter = userAdapter
             layoutManager = LinearLayoutManager(requireContext())

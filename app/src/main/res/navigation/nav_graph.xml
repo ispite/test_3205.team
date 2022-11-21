@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="ru.skillbox.test_3205team.MainFragment"
+        android:name="ru.skillbox.test_3205team.ui.main.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
         <action
@@ -16,7 +16,11 @@
     </fragment>
     <fragment
         android:id="@+id/reposFragment"
-        android:name="ru.skillbox.test_3205team.ReposFragment"
+        android:name="ru.skillbox.test_3205team.ui.repo.ReposFragment"
         android:label="ReposFragment"
-        tools:layout="@layout/fragment_repos" />
+        tools:layout="@layout/fragment_repos">
+        <argument
+            android:name="owner"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -15,7 +15,6 @@ fun EditText.textChangedFlow(): Flow<String> {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
             override fun onTextChanged(charSequence: CharSequence?, p1: Int, p2: Int, p3: Int) {
-//                    sendBlocking(p0?.toString().orEmpty())
                 trySendBlocking(charSequence?.toString().orEmpty())
             }
 

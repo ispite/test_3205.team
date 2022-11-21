@@ -1,4 +1,4 @@
-package ru.skillbox.test_3205team
+package ru.skillbox.test_3205team.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,12 +6,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.*
-import ru.skillbox.test_3205team.data.MainRepository
+import ru.skillbox.test_3205team.data.NetworkRepository
 import ru.skillbox.test_3205team.data.User
 
 class MainViewModel : ViewModel() {
 
-    private val repository = MainRepository()
+    private val repository = NetworkRepository()
     lateinit var job: Job
 
     private val _userList = MutableLiveData<List<User>>()
@@ -27,6 +27,5 @@ class MainViewModel : ViewModel() {
                 _userList.postValue(repository.searchUsers(query))
             }
             .launchIn(viewModelScope)
-
     }
 }

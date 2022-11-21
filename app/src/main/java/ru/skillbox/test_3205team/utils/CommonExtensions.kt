@@ -9,7 +9,8 @@ fun <T : ViewBinding> ViewGroup.inflate(
         inflater: LayoutInflater,
         root: ViewGroup?,
         attachToRoot: Boolean
-    ) -> T, attachToRoot: Boolean = false
+    ) -> T,
+    attachToRoot: Boolean = false
 ): T {
     val inflater = LayoutInflater.from(context)
     return inflateBinding(inflater, this, attachToRoot)
